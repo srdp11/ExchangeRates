@@ -1,0 +1,6 @@
+:schedule:
+  fetch_data:
+    interval: 60
+    class: FetchDataWorker
+    retry: false
+    backtrace: true
