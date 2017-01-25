@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  condition: MyString
+  threshold: 1.5
+  last_notification_value: 1.5
+
+two:
+  email: MyString
+  condition: MyString
+  threshold: 1.5
+  last_notification_value: 1.5
