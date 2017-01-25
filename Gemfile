@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pry'
 gem 'sidekiq'
 gem 'sidekiq-dejavu'
+gem 'mailfactory'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
