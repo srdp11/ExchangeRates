@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170102121548) do
+ActiveRecord::Schema.define(version: 20170123144519) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "email"
+    t.string   "fromto"
+    t.string   "condition"
+    t.float    "threshold"
+    t.float    "last_notification_value"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "operation"
+  end
 
   create_table "rates", force: :cascade do |t|
     t.float    "usd_sell"
