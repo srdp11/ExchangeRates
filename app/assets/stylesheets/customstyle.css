@@ -1,52 +1,43 @@
-.rate-name{
-    font-weight:bold;
-    font-size:20px;
-}
-
-.add-info{
-    margin-top:10px;
-    font-size:20px;
-}
-
-.trigger{
-    margin-top:40px;
-}
-
-.trigger-body{
-    border:1px solid gray;
-}
-
-.trigger-block{
-    padding-top:5px;
-    padding-bottom:5px;
-}
-
-.trigger-btn-sumbit{
-    float:right;
-}
-
-.chart{
-    border:1px solid gray;
-}
-
-.col{
-    margin-top:20px;
-}
-
-.rate-elem{
-    padding-bottom:5px;
-    display:block;
+h1{
+  text-align: center;
 }
 
 .rate-block{
-    margin-right:50px;
-    display:inline-block;
+  margin-right:50px;
+  display:inline-block;
 }
 
 .rates-info{
-    font-size:17px;
+  font-size:17px;
+}
+
+.add-info{
+  font-size:20px;
+  display:block;
+}
+
+.rate-elem{
+  margin-top:5px;
+  display:block;
+}
+
+.trigger-body{
+  border:1px solid gray;
+}
+
+.trigger-block{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+
+.trigger-btn-sumbit{
+  float:right;
+}
+
+.chart-area{
+  border:1px solid gray;
 }
 
 .chart-title{
-    text-align:center;
+  text-align:center;
 }
