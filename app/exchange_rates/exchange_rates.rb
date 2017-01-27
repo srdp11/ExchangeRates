@@ -23,6 +23,6 @@ class ExchangeRates
   end
 
   def spread(data)
-    { absolute:data['sell'] - data['buy'], relative:(data['sell'] - data['buy']) / data['buy'] }
+    { absolute: data['sell'] - data['buy'], relative: (data['sell'] - data['buy']) / data['buy'] }
   end
 end

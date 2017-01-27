@@ -2,7 +2,8 @@ class Client < ApplicationRecord
   def initialize(attributes = {})
     super
     @email = attributes[:email]
-    @fromto = attributes[:fromto]
+    @from = attributes[:from]
+    @to = attributes[:to]
     @condition = attributes[:condition]
     @threshold = attributes[:threshold]
     @last_notification_value = nil
