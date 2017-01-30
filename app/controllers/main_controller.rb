@@ -2,11 +2,8 @@ require 'Rate'
 require 'pry'
 
 class MainController < ApplicationController
-  @@from_to_vals = ['EUR/RUB', 'EUR/USD', 'EUR/GBP',
-                    'USD/RUB', 'USD/EUR', 'USD/GBP']
-
   def index
-    from, to = @@from_to_vals[0].scan(/\w+/)
+    from, to = ExchangeRates::AVALIBLE_RATES[0].scan(/\w+/)
 
     rates = ExchangeRates.new
     data = rates.from_to(rates.fetch_data, from, to)
@@ -18,6 +15,6 @@ class MainController < ApplicationController
     @sell = "#{sell_buy_data[:sell]} #{to}"
     @buy = "#{sell_buy_data[:buy]} #{to}"
     @spread = "#{spread_data[:absolute]} #{to} (#{spread_data[:relative]} %)"
-    @fromto = @@from_to_vals
+    @fromto = ExchangeRates::AVALIBLE_RATES
   end
 end

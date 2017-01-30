@@ -2,6 +2,8 @@ require 'net/http'
 require 'json'
 
 class ExchangeRates
+  AVALIBLE_RATES = ['EUR/RUB', 'EUR/USD', 'EUR/GBP',
+                    'USD/RUB', 'USD/EUR', 'USD/GBP']
   RATES_URI = URI('https://www.tinkoff.ru/api/v1/currency_rates')
 
   def fetch_data

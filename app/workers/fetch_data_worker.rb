@@ -3,10 +3,6 @@ require 'net/smtp'
 class FetchDataWorker
   include Sidekiq::Worker
 
-  # TODO delete this array from here
-  @@from_to_vals = ['EUR/RUB', 'EUR/USD', 'EUR/GBP',
-                    'USD/RUB', 'USD/EUR', 'USD/GBP']
-
   def rates_fetching(from, to)
     rates = ExchangeRates.new
     data = rates.sell_buy(rates.from_to(rates.fetch_data, from, to))
@@ -38,7 +34,7 @@ class FetchDataWorker
   # end
 
   def perform
-    @@from_to_vals.each do |from_to|
+    ExchangeRates::AVALIBLE_RATES.each do |from_to|
       from, to = from_to.scan(/\w+/)
       rates_fetching(from, to)
     end
