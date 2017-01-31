@@ -1,7 +1,16 @@
 <!DOCTYPE html>
-<%= react_component('StartPage',
-                    sell: @sell,
-                    buy: @buy,
-                    fromto: @fromto,
-                    spread: @spread
-                    ) %>
+<html>
+  <head>
+    <title>Exchange rates</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="css/customstyle.css" rel="stylesheet" media="screen" />
+  </head>
+  <body>
+    <%= react_component('StartPage',
+                        data: @data,
+                        fromto: @fromto,
+                        ) %>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
