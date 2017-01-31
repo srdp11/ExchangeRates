@@ -1,20 +1,22 @@
 require 'Rate'
 require 'pry'
+require 'json'
 
 class MainController < ApplicationController
   def index
-    from, to = ExchangeRates::AVALIBLE_RATES[0].scan(/\w+/)
-
     rates = ExchangeRates.new
-    data = rates.from_to(rates.fetch_data, from, to)
+    data = rates.fetch_format_data
 
-    sell_buy_data = rates.sell_buy(data).inject({}) { |h, (k, v)| h[k] = '%.2f' % v; h }
-    spread_data = rates.spread(data).inject({}) { |h, (k, v)| h[k] = '%.2f' % v; h }
+    curr_data = data[ExchangeRates::AVALIBLE_RATES[0]]
 
     # TODO add information about forecast and average rates
-    @sell = "#{sell_buy_data[:sell]} #{to}"
-    @buy = "#{sell_buy_data[:buy]} #{to}"
-    @spread = "#{spread_data[:absolute]} #{to} (#{spread_data[:relative]} %)"
+    @data = data
     @fromto = ExchangeRates::AVALIBLE_RATES
+  end
+
+  def data
+    rates = ExchangeRates.new
+
+    render json: rates.fetch_format_data
   end
 end
