@@ -5,12 +5,12 @@ class RatesInfo extends React.Component {
         <h2>Currency exchange rates:</h2>
         <div className="rate-block">
           <span>From/To</span>
-          <select className="rate-elem">
+          <select className="rate-elem" onChange={ this.props.onChange }>
             {
               this.props.fromto.map(function(item) {
                 return <option>{ item }</option>
               })
-            } 
+            }
           </select>
         </div>
         <div className="rate-block">
